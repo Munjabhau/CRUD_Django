@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <h2>Create Operation</h2>
+    <form action="create" method="post" onsubmit="return validate();" name="fn">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name" name="name" id="name">
+            <span id="msg1" style="color:red;"></span>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" placeholder="Enter your name" name="age" id="age">
+            <span id="msg2" style="color:red;"></span>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea name="address" class="form-control" id="address" placeholder="Enter Addresss....."></textarea>
+            <span id="msg3" style="color:red;"></span>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
